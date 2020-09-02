@@ -7,10 +7,9 @@ class spicy{
             queue.offer(value);
         }
 
-        while(queue.peek()<K) {
-            if(queue.isEmpty()) {
-                answer = -1;
-                break;
+        while(queue.peek()<=K) {
+            if(queue.size()==1) {
+                return -1;
             }
             int min = queue.poll();
             int second_min = queue.poll();
