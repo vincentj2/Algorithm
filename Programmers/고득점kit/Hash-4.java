@@ -1,60 +1,80 @@
 
 class bestAlbum{
-    public static <K, V> K getKey(Map<K, V> map, V value) {
-        // 찾을 hashmap 과 주어진 단서 value
-        for (K key : map.keySet()) {
-            if (value.equals(map.get(key))) {
-                return key;
+
+    class Song implements Comparable<Song> {
+        int id, play;
+        String genre;
+
+        Song(int id, int play, String genre){
+            this.id = id;
+            this.play = play;
+            this.genre = genre;
+        }
+
+        @Override
+        public int compareTo(Song o){
+            if(this.play == o.play){
+                return this.id - o.id;
+            } else {
+                return -(this.play - o.play);
             }
         }
-        return null;
     }
+
+    ArrayList<Integer> bestAlbum;
+    ArrayList<Song> songList;
+    HashMap<String, Integer> genreMap;
+    HashMap<String, Integer> albumMap;
+
     public int[] solution(String[] genres, int[] plays) {
-        boolean[] chk = new boolean[plays.length];
+        bestAlbum = new ArrayList<>();
+        songList = new ArrayList<>();
+        genreMap = new HashMap<>();
+        albumMap = new HashMap<>();
 
-        HashMap<String, Integer> totalList = new HashMap<>();
-        for(int i=0;i<genres.length;i++){
-            if(totalList.containsKey(genres[i])){
-                totalList.put(genres[i],totalList.get(genres[i])+plays[i]);
-            }
-            else{
-                totalList.put(genres[i], plays[i]);
+        for(int i = 0 ; i < genres.length ; ++i){
+            int id = i;
+            int play = plays[i];
+            String genre = genres[i];
+
+            songList.add(new Song(id, play, genre));
+
+            if(genreMap.containsKey(genre)){
+                genreMap.put(genre, genreMap.get(genre) + play);
+            } else {
+                genreMap.put(genre, play);
             }
         }
 
-        List<Integer> Rank = new ArrayList<>(totalList.values());
-        Rank.sort(Collections.reverseOrder());
-        //장르순 결정
-        //플레이 횟수,순서 hashmap -> 횟수 정렬 -> 가장큰 횟수 == 장르 순 맞으면 2개까지 answer에 넣고 하나뿐이면 다음으로
-        HashMap<Integer,Integer> numRank = new HashMap<>();
-        for(int j=0;j<plays.length;j++){
-            numRank.put(j,plays[j]);
-        }
-        List<Integer> playRank = new ArrayList<>(numRank.values());
-        playRank.sort(Collections.reverseOrder());
-        System.out.println(numRank);
-
-        ArrayList<Integer> answerlist = new ArrayList<>();
-
-        for(Integer genreSum : Rank){
-            int num =0;
-            for(int k=0; k< playRank.size();k++){
-                if(genres[getKey(numRank,playRank.get(k))].equals(getKey(totalList,genreSum)) && num <=2){
-                    if(answerlist.size() >1 && (plays[answerlist.get(answerlist.size()-1)] == playRank.get(k)) && (answerlist.get(answerlist.size()-1)>(getKey(numRank,playRank.get(k))))){
-                        answerlist.set(answerlist.size()-1,getKey(numRank,playRank.get(k)));
-                        System.out.println("ㅇㅇㅇㅇ");
-                    }
-                }
-                if(genres[getKey(numRank,playRank.get(k))].equals(getKey(totalList,genreSum)) && num <2){
-                    answerlist.add(getKey(numRank,playRank.get(k)));
-                    chk[getKey(numRank,playRank.get(k))] = true;
-                    num++;
+        Collections.sort(songList, new Comparator<Song>(){
+            @Override
+            public int compare(Song s1, Song s2){
+                if(s1.genre.equals(s2.genre)){
+                    return s1.compareTo(s2);
+                } else {
+                    return -(genreMap.get(s1.genre) - genreMap.get(s2.genre));
                 }
             }
+        });
+
+        for(Song song : songList){
+            if(!albumMap.containsKey(song.genre)){
+                albumMap.put(song.genre, 1);
+                bestAlbum.add(song.id);
+            } else {
+                int genreCnt = albumMap.get(song.genre);
+
+                if(genreCnt >= 2) continue;
+                else {
+                    albumMap.put(song.genre, genreCnt + 1);
+                    bestAlbum.add(song.id);
+                }
+            }
         }
-        int[] answer = new int[answerlist.size()];
-        for(int i=0; i<answerlist.size();i++){
-            answer[i] = answerlist.get(i);
+
+        int[] answer = new int[bestAlbum.size()];
+        for(int i = 0 ; i < answer.length ; ++i){
+            answer[i] = bestAlbum.get(i);
         }
 
         return answer;
