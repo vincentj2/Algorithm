@@ -1,3 +1,4 @@
+package Algorthm.Programmers.고득점kit;
 
 // 가장 큰 수
 class Maxnum{

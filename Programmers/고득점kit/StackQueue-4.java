@@ -1,4 +1,4 @@
-//프린터
+package Algorthm.Programmers.고득점kit;//프린터
 import java.util.*;
 
 class printer{

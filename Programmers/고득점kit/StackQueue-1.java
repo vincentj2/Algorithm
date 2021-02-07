@@ -1,4 +1,4 @@
-//주식가격
+package Algorthm.Programmers.고득점kit;//주식가격
 
 class Solution {
     public int[] solution(int[] prices) {

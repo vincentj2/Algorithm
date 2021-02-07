@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 // 체욱복
 class Cloth {
     public int solution(int n, int[] lost, int[] reserve) {

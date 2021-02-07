@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 //여행경로
 class travelRoute{
     int ticketNum =0;

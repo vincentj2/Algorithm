@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 class diskController{
 
     public int solution(int[][] jobs) {

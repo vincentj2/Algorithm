@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 import java.util.*;
 
 class Solution {

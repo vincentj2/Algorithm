@@ -1,4 +1,4 @@
-//모의고사
+package Algorthm.Programmers.고득점kit;//모의고사
 import java.util.*;
 
 

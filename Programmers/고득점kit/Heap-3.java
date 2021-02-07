@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 // 이중우선순위큐
 class doublePriority{
     public int[] solution(String[] operations) {

@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 // H-Index
 class HINDEX{
     public int solution(int[] citations) {

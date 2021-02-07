@@ -1,4 +1,4 @@
-//200 Number of Islands
+package Algorthm.LeetCode;//200 Number of Islands
 
 class Solution {
     public int numIslands(char[][] grid) {

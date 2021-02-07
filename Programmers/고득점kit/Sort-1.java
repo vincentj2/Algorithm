@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 // K번째 수
 class KNUM {
     public int[] solution(int[] array, int[][] commands) {

@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 // 큰 수 만들기
 class bigNum{
     public String solution(String number, int k) {

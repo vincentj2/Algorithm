@@ -1,4 +1,4 @@
-//다리를 지나는 트럭
+package Algorthm.Programmers.고득점kit;//다리를 지나는 트럭
 import java.util.*;
 
 class Solution {

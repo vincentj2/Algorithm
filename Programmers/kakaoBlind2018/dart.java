@@ -1,3 +1,5 @@
+package Algorthm.Programmers.kakaoBlind2018;
+
 public class solve {
     public static void main(String[] args)  {
         num6 k = new num6();

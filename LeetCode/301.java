@@ -1,3 +1,5 @@
+package Algorthm.LeetCode;
+
 import java.util.*;
 
 public class solve {

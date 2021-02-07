@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 //단어 변환
 class wordChange {
     int answer = 0;

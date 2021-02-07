@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 // 소수찾기
 class PrimeNum {
     public int solution(String numbers) {

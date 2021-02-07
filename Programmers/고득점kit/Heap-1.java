@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 //더 맵게
 class spicy{
     public int solution(int[] scoville, int K) {

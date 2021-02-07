@@ -1,4 +1,4 @@
-//695 Max Area of Island
+package Algorthm.LeetCode;//695 Max Area of Island
 
 class Solution {
     static int max=0;

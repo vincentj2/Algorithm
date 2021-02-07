@@ -1,3 +1,4 @@
+package Algorthm.Programmers.고득점kit;
 
 class bestAlbum{
 

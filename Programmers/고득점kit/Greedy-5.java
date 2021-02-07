@@ -1,3 +1,4 @@
+package Algorthm.Programmers.고득점kit;
 
 class connectIsland{
     //크루스칼 알고리즘을 통해 해결, 유니온파인드 사용

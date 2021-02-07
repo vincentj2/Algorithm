@@ -1,3 +1,4 @@
+package Algorthm.Programmers.고득점kit;
 
 class camera{
     class Route implements Comparable<Route>{
@@ -41,6 +42,31 @@ class camera{
             }else{
                 min =Math.max(min,in);
                 max = Math.min(max, out);
+            }
+        }
+        return answer;
+    }
+}
+
+
+//간단하게 푸는법
+import java.util.*;
+
+class Solution {
+    public int solution(int[][] routes) {
+        int answer = 0;
+        Arrays.sort(routes, new Comparator<int []>() {
+
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return Integer.compare(o1[1], o2[1]);
+            }
+        });
+        int cameraPos = -30001;
+        for(int i = 0; i < routes.length; i++) {
+            if(cameraPos < routes[i][0]) {
+                answer++;
+                cameraPos = routes[i][1];
             }
         }
         return answer;

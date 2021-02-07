@@ -1,3 +1,4 @@
+package Algorthm.Programmers.kakao2019_winter_internship;
 
 //징검다리 건너기 - 이진탐색
 class bride{

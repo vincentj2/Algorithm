@@ -1,3 +1,5 @@
+package Algorthm.LeetCode;
+
 //104   Maximum Depth of Binary Tree
 class Solution {
     public class TreeNode {

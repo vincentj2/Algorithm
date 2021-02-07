@@ -1,3 +1,4 @@
+package Algorthm.Programmers.고득점kit;
 
 //입국 심사
 public class solve {

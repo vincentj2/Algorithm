@@ -1,3 +1,4 @@
+package Algorthm.Programmers.고득점kit;
 
 public class solve {
     public static void main(String[] args)  {

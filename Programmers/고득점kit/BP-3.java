@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 //카펫
 class Solution {
     public int[] solution(int brown, int yellow) {

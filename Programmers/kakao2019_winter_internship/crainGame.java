@@ -1,3 +1,5 @@
+package Algorthm.Programmers.kakao2019_winter_internship;
+
 //크레인 인형뽑기 게임
 class game{
     public int solution(int[][] board, int[] moves) {

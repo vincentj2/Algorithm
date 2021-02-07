@@ -1,3 +1,4 @@
+package Algorthm.Programmers.kakao2019_winter_internship;
 
 class tuple{
     public int[] solution(String s) {

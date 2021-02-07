@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 // 타겟 넘버
 class target{ //DFS 사용 문제
     int answer = 0;

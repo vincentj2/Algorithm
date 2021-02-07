@@ -1,3 +1,5 @@
+package Algorthm.Programmers.고득점kit;
+
 //네트워크
 class network{
     public int solution(int n, int[][] computers) {
