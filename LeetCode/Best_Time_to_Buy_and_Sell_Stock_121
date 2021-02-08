@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class solve {
+    public static void main(String[] args)  {
+        Solution k = new Solution();
+        int ans =k.solution(new int[]{7,1,5,3,6,4});
+        System.out.println(ans);
+    }
+}
+
+
+class Solution {
+
+    public int solution(int[] prices) {
+     /* v1 : min 값이 변경 되는 경우에는  차이를 계산할 필요가 없음
+     int diff=0; //가장 작은 값과 현재 값의 차이
+     int min = prices[0]; // 초기 세팅
+     int answer = 0;
+
+
+     for(int i=1; i<prices.length; i++){
+         if(min > prices[i]) min = prices[i];
+         if(prices[i]-min >diff){
+             diff = prices[i]-min;
+             answer = diff;
+         }
+     }*/
+        int max =0;
+        int min = Integer.MAX_VALUE;
+        for(int i=0; i<prices.length;i++){
+            if(prices[i]<min){
+                min = prices[i];
+            }else{
+                if(prices[i] - min > max){
+                    max = prices[i]-min;
+                }
+            }
+        }
+        return max;
+    }
+}
+
