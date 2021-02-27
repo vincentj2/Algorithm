@@ -57,8 +57,10 @@ public class solve {
                     int col = temp[1] + col_pos[i];
                     int key = temp[2];
 
-                    if (row < 0 || row >= N || col < 0 || col >= M || visit[row][col][temp[2]] ==1 || map[row][col] == '#')
+                    if (row < 0 || row >= N || col < 0 || col >= M || visit[row][col][temp[2]] ==1 || map[row][col] == '#') {
                         continue;
+                    }
+
                     if (map[row][col] == '1') return time;
 
                         //문인 경우
