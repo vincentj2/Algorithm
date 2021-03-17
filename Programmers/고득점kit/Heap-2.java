@@ -9,7 +9,7 @@ class diskController{
         int idx = 0;//배열 인덱스
         int end =0; //작업 끝난 시간
 
-        //input 작업 요청 시간 오름차순 정렬
+        //input.txt 작업 요청 시간 오름차순 정렬
         Arrays.sort(jobs, (o1, o2) -> o1[0]-o2[0]);
         //작업 소요시간 오름차순 정렬
         PriorityQueue<int[]> heap = new PriorityQueue<>((o1, o2) -> o1[1]-o2[1]);
