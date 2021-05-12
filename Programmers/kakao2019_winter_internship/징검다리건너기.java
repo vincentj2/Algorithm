@@ -44,3 +44,32 @@ class Solution {
         return answer;
     }
 }
+
+
+//2번째 방법
+// k개의 구간으로 나눠서 가장 큰 값이 지나갈수 있는 횟수이다
+import java.util.Arrays;
+
+class Solution {
+    public int solution(int[] stones, int k) {
+        int answer = Integer.MAX_VALUE;
+
+
+        for(int i = 0; i<=stones.length-k; i++){
+            int temp = i;
+            int stone = stones[i];
+            for(int j = i; j<i+k; j++){
+                if(stones[j] > stone){
+                    stone = stones[j];
+                    temp = j;
+                }
+            }
+            if(answer > stone){
+                answer = stone;
+            }
+            i = temp;
+
+        }
+        return answer;
+    }
+}
