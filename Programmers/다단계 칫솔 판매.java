@@ -12,12 +12,10 @@ class Solution {
     public int[] solution(String[] enroll, String[] referral, String[] seller, int[] amount) {
         int[] answer = new int[enroll.length];
         HashMap<String, Integer> hm = new HashMap<>();
-        for(String str : enroll){
-            hm.put(str,0);
-        }
         HashMap<String, String> refer = new HashMap<>();
         for(int i=0; i<enroll.length;i++){
             refer.put(enroll[i],referral[i]);
+            hm.put(enroll[i],0);
         }
 
         for(int i=0; i< seller.length; i++){
